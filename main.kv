@@ -5,33 +5,31 @@ MDScreen:
         orientation: 'vertical'
         MDBoxLayout:
             size_hint_y:0.25
-            padding:dp(25)
+            padding:dp(10)
 
             MDBoxLayout:
                 orientation:"vertical"
             
                 MDLabel:
                     text: "Home Automation Application"
+                    bold: True
+                    halign: "center"
                     theme_text_color: "Custom"
                     text_color: 1, 1, 1, 1
-                    font_style: "H4"
-                
-                MDBoxLayout:
-                    adaptive_size:True
-                    spacing:dp(10)
-                    
+                    font_style: "H5"    
                                         
             MDRoundFlatButton:
                 background_color: (255/255 ,225/255, 141/255, 1)
                 size_hint: None, None
-                size: dp(100), dp(100)
+                pos_hint: {"center_x":0.5, "center_y":0.5}
+                size: dp(80), dp(80)
                 canvas.before:
                     Color:
                         rgba: self.background_color
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
-                        radius: [80]
+                        radius: [60]
 
                 Image:
                     source: 'logo.png'
@@ -41,6 +39,26 @@ MDScreen:
                     allow_stretch: True
                     keep_ratio: True
 
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: '10dp'
+            padding: '10dp'
+            size_hint_y: None
+            height: self.minimum_height
+            
+            MDLabel:
+                text: "Connect Bluetooth:"
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1  
+                font_style: "Body1"
+                size_hint_y: None 
+                height: dp(5)
+                pos_hint: {'center_x':0.5, 'center_y':0.5} 
+                
+            MDFloatingActionButton:
+                icon: "bluetooth"  
+                elevation_normal: 12
 
         MDGridLayout:
             size_hint_y: 0.75
