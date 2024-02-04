@@ -1,0 +1,122 @@
+MDScreen:
+    md_bg_color: 15/255, 119/255, 109/255, 1
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDBoxLayout:
+            size_hint_y:0.25
+            padding:dp(25)
+
+            MDBoxLayout:
+                orientation:"vertical"
+            
+                MDLabel:
+                    text: "Home Automation Application"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    font_style: "H4"
+                
+                MDBoxLayout:
+                    adaptive_size:True
+                    spacing:dp(10)
+                    
+                                        
+            MDRoundFlatButton:
+                background_color: (255/255 ,225/255, 141/255, 1)
+                size_hint: None, None
+                size: dp(100), dp(100)
+                canvas.before:
+                    Color:
+                        rgba: self.background_color
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [80]
+
+                Image:
+                    source: 'logo.png'
+                    center_x: self.parent.center_x
+                    center_y: self.parent.center_y
+                    size_hint: 3,3
+                    allow_stretch: True
+                    keep_ratio: True
+
+
+        MDGridLayout:
+            size_hint_y: 0.75
+            pos_hint_y: 0.5
+            cols:1
+            padding:[dp(15),dp(15),dp(15),dp(35)]
+            spacing:dp(15)
+            MDCard:
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: 0.5, 0.5
+                md_bg_color: 96/255, 204/255, 194/255, 1
+
+                FloatLayout:
+                    MDRoundFlatButton:
+                        background_color: (1, 1, 1, 1)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+                        size_hint: None, None
+                        size: dp(128), dp(128)
+                        canvas.before:
+                            Color:
+                                rgba: self.background_color
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [100]
+
+                        Image:
+                            source: 'bulbon.png'
+                            center_x: self.parent.center_x
+                            center_y: self.parent.center_y
+                            size_hint: 1, 1
+                            allow_stretch: True
+                            keep_ratio: True
+
+                    MDLabel:
+                        text: "Light On"
+                        halign: "center"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                        theme_text_color: "Custom"
+                        bold: True
+                        text_color: 1, 1, 1, 1
+                        font_style: "H5"
+
+            
+            MDCard:
+                pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                size_hint: 0.5, 0.5
+                md_bg_color: 96/255, 204/255, 194/255, 1
+
+                FloatLayout:
+                    MDRoundFlatButton:
+                        background_color: (1, 1, 1, 1)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+                        size_hint: None, None
+                        size: dp(128), dp(128)
+                        canvas.before:
+                            Color:
+                                rgba: self.background_color
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [100]
+
+                        Image:
+                            source: 'mic.png'
+                            center_x: self.parent.center_x
+                            center_y: self.parent.center_y
+                            size_hint: 1, 1
+                            allow_stretch: True
+                            keep_ratio: True
+
+                    MDLabel:
+                        text: "Voice Control"
+                        halign: "center"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.1}
+                        theme_text_color: "Custom"
+                        bold: True
+                        text_color: 1, 1, 1, 1
+                        font_style: "H5"
